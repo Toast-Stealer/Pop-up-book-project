@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#21164f" />
+  <title>Johnny Builds to Mars</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Johnny Builds to Mars home"><span class="brand-icon">✦</span> JOHNNY BUILDS <span>TO MARS</span></a>
+    <div class="progress-wrap"><span id="pageLabel">PAGE 1 OF 5</span><div class="progress"><i id="progressBar"></i></div></div>
+    <button class="sound-button" id="soundButton" type="button" aria-pressed="false">♫ <span>sound off</span></button>
+  </header>
+
+  <main id="top">
+    <section class="book-shell" aria-label="Interactive storybook">
+      <div class="book-spine"></div>
+      <article class="story-page page-active" data-page="1" data-title="Mission control">
+        <div class="page-copy">
+          <p class="eyebrow">A pop-up adventure · 01</p>
+          <h1>Johnny has<br><em>a BIG idea.</em></h1>
+          <p class="story-text">Mars is waiting. But first, Johnny needs a rocket that can zoom past the moon!</p>
+          <div class="activity-card">
+            <span class="activity-number">01</span><div><strong>Tap the launch button</strong><small>Wake up the rocket!</small></div><button class="launch-btn" id="launchButton" type="button">LAUNCH!</button>
+          </div>
+        </div>
+        <div class="scene scene-launch" aria-label="Johnny beside a rocket illustration">
+          <div class="moon"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+          <div class="rocket" id="rocket"><div class="rocket-window"></div><div class="rocket-fin left"></div><div class="rocket-fin right"></div><div class="flame"></div></div>
+          <div class="hill hill-back"></div><div class="hill hill-front"></div>
+          <div class="kid kid-launch"><div class="kid-head"></div><div class="kid-hair"></div><div class="kid-body"></div><div class="kid-arm"></div></div>
+          <span class="scene-label">READY?</span>
+        </div>
+      </article>
+
+      <article class="story-page" data-page="2" data-title="Rocket builder">
+        <div class="page-copy"><p class="eyebrow">Rocket builder · 02</p><h2>Build it<br><em>your way.</em></h2><p class="story-text">Every great rocket starts with a great design. Pick a color, then give your rocket a name!</p>
+          <div class="activity-card"><span class="activity-number">02</span><div><strong>Build the rocket</strong><small>Drag the pieces onto it!</small></div><div class="swatches"><button class="swatch coral" data-color="coral" aria-label="Choose coral rocket"></button><button class="swatch blue" data-color="blue" aria-label="Choose blue rocket"></button><button class="swatch yellow" data-color="yellow" aria-label="Choose yellow rocket"></button></div></div><div class="name-maker"><input id="rocketName" maxlength="14" placeholder="Rocket name" aria-label="Name your rocket"><button id="saveName" type="button">SAVE NAME</button></div><div class="parts-tray"><button class="part part-window" draggable="true" data-part="window" aria-label="Drag rocket window"></button><button class="part part-fin" draggable="true" data-part="fin" aria-label="Drag rocket fin"></button><button class="part part-flame" draggable="true" data-part="flame" aria-label="Drag rocket flame"></button><span id="buildCount">0 / 3 parts</span></div>
+        </div>
+        <div class="scene scene-builder"><div class="blueprint"><span>ROCKET<br>PLAN A-1</span><i>✦</i></div><div class="big-rocket rocket-picker" id="pickerRocket"><div class="rocket-window"></div><div class="rocket-fin left"></div><div class="rocket-fin right"></div><div class="flame"></div></div><div class="toolbox">TOOLS<br><b>★ ★ ★</b></div></div>
+      </article>
+
+      <article class="story-page" data-page="3" data-title="Blast off">
+        <div class="page-copy"><p class="eyebrow">Blast off · 03</p><h2>3... 2... 1...<br><em>WHOOSH!</em></h2><p class="story-text">Johnny grips his helmet. The engines rumble like a dragon's tummy.</p>
+          <div class="activity-card"><span class="activity-number">03</span><div><strong>Drag the stars away</strong><small>Clear a path to Mars.</small></div><div class="star-meter" id="starMeter"><button draggable="true" type="button">★</button><button draggable="true" type="button">★</button><button draggable="true" type="button">★</button></div></div>
+        </div><div class="scene scene-space" id="spaceScene"><div class="planet earth"></div><div class="planet mars-small"></div><div class="orbit"></div><div class="big-rocket flying"><div class="rocket-window"></div><div class="rocket-fin left"></div><div class="rocket-fin right"></div><div class="flame"></div></div><span class="zoom-word">ZOOM!</span></div>
+      </article>
+
+      <article class="story-page" data-page="4" data-title="Mars landing">
+        <div class="page-copy"><p class="eyebrow">Mars landing · 04</p><h2>Welcome to<br><em>the red planet.</em></h2><p class="story-text">A tiny red world, a giant new adventure. Johnny spots a friendly space buddy!</p>
+          <div class="activity-card"><span class="activity-number">04</span><div><strong>Whack the aliens!</strong><small>Tap each alien before it hides.</small></div><span class="alien-score" id="alienScore">0 / 3</span></div>
+        </div><div class="scene scene-mars"><div class="mars-ground"></div><div class="martian" id="martian"><div class="antenna"></div><div class="martian-eye left"></div><div class="martian-eye right"></div><div class="martian-mouth"></div><div class="martian-hand">✋</div></div><div class="alien-holes"><button class="alien" type="button" aria-label="Whack alien one"><i></i></button><button class="alien" type="button" aria-label="Whack alien two"><i></i></button><button class="alien" type="button" aria-label="Whack alien three"><i></i></button></div><div class="flag">MARS<br><b>★</b></div><div class="big-rocket landed"><div class="rocket-window"></div><div class="rocket-fin left"></div><div class="rocket-fin right"></div></div></div>
+      </article>
+
+      <article class="story-page" data-page="5" data-title="The end">
+        <div class="page-copy final-copy"><p class="eyebrow">Mission complete · 05</p><h2>Johnny built<br><em>a new world.</em></h2><p class="story-text">And the best part? Every adventure begins with one big idea. What will you build next?</p><div class="made-by-reader">ROCKET: <b id="savedRocketName">YOUR ROCKET</b><span class="mini-rocket" id="miniRocket"></span></div><button class="badge-button" id="badgeButton" type="button">TAP TO CLAIM YOUR BADGE ★</button><div class="finish-badge" id="finishBadge">★ MARS EXPLORER ★</div><button class="restart-btn" id="restartButton" type="button">READ IT AGAIN ↗</button></div>
+        <div class="scene scene-final"><div class="sunburst"></div><div class="planet mars-final"></div><div class="flag final-flag">THE<br>END!</div><div class="kid kid-wave"><div class="kid-head"></div><div class="kid-hair"></div><div class="kid-body"></div><div class="kid-arm"></div></div><div class="confetti">✦　✧　★　✦<br>✧　★　✦　✧</div></div>
+      </article>
+      <nav class="book-nav"><button id="prevButton" type="button" disabled>← BACK</button><div class="dots" id="dots" aria-label="Story pages"></div><button id="nextButton" type="button">NEXT PAGE →</button></nav>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite">Nice work, space builder! ★</div>
+  <script src="script.js"></script>
+</body>
+</html>
